@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.d81231bc.css",
+    "main.js": "./static/js/main.6100df7b.js",
+    "static/js/787.f43b336b.chunk.js": "./static/js/787.f43b336b.chunk.js",
+    "static/media/MontserratSemiBold.woff2": "./static/media/MontserratSemiBold.ae81870c624c24c5e632.woff2",
+    "static/media/MontserratBold.woff2": "./static/media/MontserratBold.ad94a829f71854eec26a.woff2",
+    "static/media/RobotoRegular.woff2": "./static/media/RobotoRegular.f141498794646cf7d0cc.woff2",
+    "static/media/RobotoMedium.woff2": "./static/media/RobotoMedium.29941d7f2b1c9f4ece0b.woff2",
+    "static/media/MontserratBold.woff": "./static/media/MontserratBold.a82b94341567da83c0e3.woff",
+    "static/media/MontserratSemiBold.woff": "./static/media/MontserratSemiBold.b8ba4c56a43a19468a13.woff",
+    "static/media/main-screen.png": "./static/media/main-screen.d6c6cfc917b1bea110c8.png",
+    "static/media/RobotoMedium.woff": "./static/media/RobotoMedium.ae21b6337d29f98802e6.woff",
+    "static/media/RobotoRegular.woff": "./static/media/RobotoRegular.f54ed72fdf2be912b83e.woff",
+    "static/media/active-tab.png": "./static/media/active-tab.ba377a97134317e24b1c.png",
+    "index.html": "./index.html",
+    "static/media/line.svg": "./static/media/line.536e89d5cfa51d8d6cfe.svg",
+    "main.d81231bc.css.map": "./static/css/main.d81231bc.css.map",
+    "main.6100df7b.js.map": "./static/js/main.6100df7b.js.map",
+    "787.f43b336b.chunk.js.map": "./static/js/787.f43b336b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d81231bc.css",
+    "static/js/main.6100df7b.js"
+  ]
+}
