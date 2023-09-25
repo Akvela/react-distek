@@ -1,0 +1,17 @@
+.app {
+  height: 100%;
+  padding: 24px 40px;
+  background-color: var(--grey-scale-quinary);
+}
+
+@media screen and (max-width: 1199px) {
+  .app {
+    padding: 15px 10px 24px;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  .app {
+    padding-top: 7px;
+  }
+}
