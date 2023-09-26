@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './header.module.css';
+import styles from './header.module.scss';
 import { Button } from '../button/button';
 import { SvgSelector } from '../svg-selector/svg-selector';
 import logo from '../../images/logo.png';
@@ -18,7 +18,7 @@ function Header() {
   }, [windowWidth])
 
   return (
-    <header className={styles.header}>
+    <header className={styles.item}>
       <div className={styles.container}>
         <a href='/'>
           <img className={styles.logo} src={logo} alt='Логотип' />
@@ -36,7 +36,7 @@ function Header() {
           </li>
         </ul>
       </div>
-      <Button isPhone onClick='tel:+74956609370' size={windowWidth <= 1199 ? 'medium' : 'large'}>+7 495 660 93 70</Button>
+      <Button isPhone onClick='tel:+74956609370' size={windowWidth <= 1199 ? 'medium' : 'large'}>+7&#160;495&#160;660&#160;93&#160;70</Button>
     </header>
   )
 }

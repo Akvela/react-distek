@@ -1,4 +1,4 @@
-import styles from './svg-selector.module.css';
+import styles from './svg-selector.module.scss';
 
 export const SvgSelector = ({ svg }) => {
   switch (svg) {
@@ -126,11 +126,19 @@ export const SvgSelector = ({ svg }) => {
         </svg>
       )
 
-    case 'dropdown':
+    case 'dropdownClose':
       return(
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M13 9.30943V10.5377H7V9.30943H13ZM10.7034 7V13H9.30261V7H10.7034Z" fill="#393838"/>
           <path fillRule="evenodd" clipRule="evenodd" d="M4 2C2.89543 2 2 2.89542 2 4V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V4C18 2.89542 17.1046 2 16 2H4ZM4 3C3.44772 3 3 3.44772 3 4V16C3 16.5523 3.44772 17 4 17H16C16.5523 17 17 16.5523 17 16V4C17 3.44772 16.5523 3 16 3H4Z" fill="#393838"/>
+        </svg>
+      )
+
+    case 'dropdownOpen':
+      return(
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M13 9.30943V10.5377H7V9.30943H13ZM10.7034 9.30943V10.5377H9.30261V9.30943H10.7034Z" fill="#393838"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 2C2.89543 2 2 2.89542 2 4V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V4C18 2.89542 17.1046 2 16 2H4ZM4 3C3.44772 3 3 3.44772 3 4V16C3 16.5523 3.44772 17 4 17H16C16.5523 17 17 16.5523 17 16V4C17 3.44772 16.5523 3 16 3H4Z" fill="#393838"/>
         </svg>
       )
 

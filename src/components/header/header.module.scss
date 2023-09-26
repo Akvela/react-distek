@@ -1,0 +1,81 @@
+@import '../../modules/variables.scss';
+
+.item {
+  display: flex;
+  gap: 11px;
+
+  @media screen and (max-width: 1199px) {
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 413px) {
+    a:last-child {
+      padding: 11px 55px 10px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: $grey-scale-sixtary;
+  border-radius: 10px;
+  padding: 10px 40px;
+
+  @media screen and (max-width: 1199px) {
+    border-radius: 8px;
+    padding: 6px 20px 4px;
+  }
+
+  @media screen and (max-width: 413px) {
+    padding: 6px 10px 4px;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 80px;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.link {
+  display: inline-flex;
+  gap: 7px;
+  text-decoration: none;
+  font-family: $font-roboto;
+  font-size: pxToRem(20);
+  font-weight: 500;
+  font-variant: all-small-caps;
+  line-height: 95%;
+  color: $grey-scale-primary-first;
+  transition: color 0.4s ease-in-out;
+
+  &:hover { 
+    color: $brand-blue-primary-light;
+
+    svg {
+      path:first-child {
+        fill: $brand-blue-primary-light;
+      }
+
+      path:last-child {
+        stroke: $brand-blue-primary-light;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .logo {
+    width: 93px;
+    height: 26px;
+  }
+}

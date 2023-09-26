@@ -1,25 +1,30 @@
-.link {
+@import '../../modules/variables.scss';
+
+.item {
   display: flex;
   gap: 10px;
   align-items: center;
   cursor: pointer;
   transition: opacity 0.4s ease-in-out;
-}
 
-.link:hover {
-  opacity: 0.6;
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 @media screen and (max-width: 1199px) {
   .link {
     gap: 8px;
-  }
-}
 
-@media screen and (max-width: 1199px) {
-  .link svg {
-    width: 17px;
-    height: 17px;
+    svg {
+      width: 17px;
+      height: 17px;
+
+      @media screen and (max-width: 413px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
 }
 
@@ -28,42 +33,30 @@
   height: 28px;
   flex-shrink: 0;
   border-radius: 100px;
-  background: var(--grey-scale-quinary);
+  background: $grey-scale-quinary;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-}
 
-@media screen and (max-width: 1199px) {
-  .logoContainer {
+  @media screen and (max-width: 1199px) {
     width: 42px;
     height: 24px;
   }
 }
 
 .title {
-  font-family: var(--font-roboto);;
-  font-size: 20px;
+  font-family: $font-roboto;
+  font-size: pxToRem(20);
   font-weight: 500;
   line-height: 95%;
   font-variant: all-small-caps;
   margin: 0;
   display: inline-flex;
   gap: 7px;
-  color: var(--brand-blue-primary-light);
-}
+  color: $brand-blue-primary-light;
 
-@media screen and (max-width: 1199px) {
-  .title {
-    font-size: 16px;
+  @media screen and (max-width: 1199px) {
+    font-size: pxToRem(16);
     line-height: 92%;
-  }
-}
-
-
-@media screen and (max-width: 413px) {
-  .link svg {
-    width: 16px;
-    height: 16px;
   }
 }

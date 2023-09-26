@@ -1,0 +1,15 @@
+@import '../../modules/variables.scss';
+
+.app {
+  height: 100%;
+  padding: 24px 40px;
+  background-color: $grey-scale-quinary;
+
+  @media screen and (max-width: 1199px) {
+    padding: 15px 10px 24px;
+  }
+
+  @media screen and (max-width: 413px) {
+    padding-top: 7px;
+  }
+}

@@ -1,4 +1,4 @@
-import styles from './button.module.css';
+import styles from './button.module.scss';
 
 export const Button = ({
   size = 'large',
@@ -12,7 +12,7 @@ export const Button = ({
     isPhone ? (
       <a 
         href={onClick} 
-        className = {`${styles.button} ` + (size === 'large' ?
+        className = {`${styles.item} ` + (size === 'large' ?
           styles.large :
           size === 'medium' ?
             styles.medium :

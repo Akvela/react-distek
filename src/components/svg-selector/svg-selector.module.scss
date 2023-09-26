@@ -1,0 +1,12 @@
+.roundDownArrow g path {
+  fill: url(#paint0_linear_311_892);
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+
+  &:hover {
+    fill: url(#paint0_linear_310_781);
+  }
+}

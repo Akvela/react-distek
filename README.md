@@ -4,7 +4,7 @@
 
 * React.js
 * HTML
-* CSS
+* Sass
 ---
 
 #### Команды

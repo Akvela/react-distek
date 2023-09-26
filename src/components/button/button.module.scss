@@ -1,0 +1,48 @@
+@import '../../modules/variables.scss';
+
+.item {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  background: $gradient-blue-button;
+  color: $grey-scale-sixtary;
+  cursor: pointer;
+  font-family: $font-roboto;
+  font-size: pxToRem(17);
+  font-weight: 500;
+  line-height: 106%;
+  text-decoration: none;
+  font-variant: all-small-caps;
+  
+  &:hover {
+    background: $gradient-blue-button-hover;
+  }
+  
+  &.disabled:hover {
+    background: $grey-scale-quaternary;
+  }
+}
+
+.small {
+  padding: 8px 24px;
+  font-size: pxToRem(15);
+  border-radius: 6px;
+}
+
+.medium {
+  padding: 11px 30px 10px;
+  border-radius: 8px;
+}
+
+.large {
+  padding: 21px 59px;
+}
+
+.disabled {
+  background: $grey-scale-quaternary;
+  cursor: default;
+}
