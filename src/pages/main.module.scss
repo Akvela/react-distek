@@ -92,7 +92,7 @@
   list-style: none;
   display: flex;
   gap: 57px;
-  padding-left: 6px;
+  padding-left: 0;
   margin: 0;
 
   @media screen and (max-width: 1295px) {
@@ -160,9 +160,28 @@
     -o-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
   }
-
+  
   @media screen and (max-width: 1505px) {
     overflow: visible;
+    
+    article:first-child::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      background: url(../images/blue-wave.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      border-radius: 20px;
+
+      @media screen and (max-width: 413px) {
+        border-radius: 8px;
+      }
+    }
   }
 }
 
@@ -184,6 +203,48 @@
     grid-template-rows: max-content max-content;
     gap: 11px;
     height: max-content;
+  }
+}
+
+.tabBackground {
+  width: 750px;
+  height: 654px;
+  position: absolute;
+  top: -25px;
+  right: 55px;
+  z-index: 1;
+  background: url(../images/tab3.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 1505px) {
+    width: 475px;
+    height: 454px;
+    top: 40px;
+    right: 50px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    position: static;
+    margin: 56px 0 0 18%;
+  }
+
+  @media screen and (max-width: 991px) {
+    width: 367px;
+    height: 319px;
+  }
+
+  @media screen and (max-width: 743px) {
+    order: 3;
+    background-size: contain;
+    margin: 74px auto 0;
+  }
+
+  @media screen and (max-width: 413px) {
+    order: 3;
+    width: 100%;
+    height: 310px;
+    margin-top: 63px;
   }
 }
 
@@ -236,31 +297,34 @@
   font-weight: 500;
   line-height: 100%;
   font-variant: all-small-caps;
-  margin: auto 0 38px 0;
+  margin: auto 0 35px 0;
+  z-index: 2;
 
   @media screen and (max-width: 1505px) {
     margin: 150px 0 50px 120px;
   }
 
   @media screen and (max-width: 1199px) {
-    margin: 90px 0 37px 0;
+    margin: 94px 0 37px 0;
   }
 
   @media screen and (max-width: 743px) {
     order: 4;
-    margin: 56px 0 35px 0;
+    margin: 40px 0 35px 0;
   }
 }
 
 .listAdvantages {
+  position: relative;
   list-style: none;
   z-index: 2;
   width: 560px;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 8px;
+  margin-top: 0;
+  margin-bottom: -13px;
   padding-left: 0;
-  margin: 0;
 
   @media screen and (max-width: 1505px) {
     margin-left: 120px;
@@ -270,15 +334,16 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px 30px;
+    gap: 3px 30px;
     margin-left: 0;
-    margin-bottom: 5px;
+    margin-bottom: -2px;
   }
 
   @media screen and (max-width: 743px) {
     order: 5;
     grid-template-columns: 100%;
-    gap: 14px;
+    gap: 5px;
+    margin-bottom: -6px;
   }
 }
 

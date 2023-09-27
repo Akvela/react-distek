@@ -136,27 +136,3 @@
     order: 1;
   }
 }
-
-.background {
-  position: absolute;
-  right: 57px;
-  top: 26px;
-  z-index: 1;
-
-  @media screen and (max-width: 1505px) {
-    top: 85px;
-    width: 600px;
-  }
-
-  @media screen and (max-width: 1199px) {
-    width: 367px;
-    position: static;
-    margin: 80px 0 0 114px;
-  }
-
-  @media screen and (max-width: 743px) {
-    order: 3;
-    width: 100%;
-    margin: 74px 0 9px 0;
-  }
-}
