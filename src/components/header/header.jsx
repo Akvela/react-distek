@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './header.module.scss';
 import { Button } from '../button/button';
 import { SvgSelector } from '../svg-selector/svg-selector';
-import logo from '../../images/logo.png';
+import logo from '../../assets/images/logo.png';
 
 function Header() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
