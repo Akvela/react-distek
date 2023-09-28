@@ -1,4 +1,4 @@
-@import '../../modules/variables.scss';
+@import '../../assets/variables.scss';
 
 .item {
   position: relative;
@@ -8,6 +8,7 @@
   padding: 26px 40px 28px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   @media screen and (max-width: 1199px) {
     padding: 11px 20px 20px;
@@ -103,12 +104,8 @@
 }
 
 .title {
-  font-family: $font-monserrat;
-  font-size: pxToRem(28);
-  font-weight: 600;
-  line-height: 106%;
+  @include textMixin($font-monserrat, $grey-scale-primary-first, 106%, 28px, 600);
   text-transform: lowercase;
-  color: $grey-scale-primary-first;
   margin: 0 0 0 99px;
   z-index: 2;
   -webkit-transition: color 0.5s ease-in-out;
@@ -134,5 +131,35 @@
     font-size: pxToRem(20);
     margin-left: 53px;
     order: 1;
+  }
+}
+
+.backgroundSoftTab {
+  width: 252px;
+  height: 249px;
+  margin: 66px auto 22px;
+
+  @media screen and (max-width: 1380px) {
+    width: 30%;
+    height: auto;
+    margin: 57px auto 20px;
+  }
+
+  @media screen and (max-width: 991px) {
+    width: 252px;
+    height: 249px;
+    margin: 76px 0 10px calc(50% - 145px);
+  }
+
+  @media screen and (max-width: 743px) {
+    order: 3;
+    width: 198px;
+    height: 195px;
+    margin: 34px 0 24px calc(50% - 145px);
+  }
+
+  @media screen and (max-width: 413px) {
+    margin-top: 32px;
+    margin-left: calc(50% - 111px);
   }
 }

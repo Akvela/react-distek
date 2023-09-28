@@ -1,22 +1,18 @@
-@import '../../modules/variables.scss';
+@import '../../assets/variables.scss';
 
 .item {
-  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include textMixin($font-roboto, $grey-scale-sixtary, 106%, 17px, 500);
+  background: $gradient-blue-button;
   border: none;
   border-radius: 10px;
   text-align: center;
-  background: $gradient-blue-button;
-  color: $grey-scale-sixtary;
   cursor: pointer;
-  font-family: $font-roboto;
-  font-size: pxToRem(17);
-  font-weight: 500;
-  line-height: 106%;
   text-decoration: none;
   font-variant: all-small-caps;
+  margin: 0;
   
   &:hover {
     background: $gradient-blue-button-hover;

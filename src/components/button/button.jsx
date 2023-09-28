@@ -8,33 +8,17 @@ export const Button = ({
   htmlType = 'button',
   isPhone = false
 }) => {
+
+  const buttonSelector = `${styles.item} ` + (size === 'large' ? styles.large : size === 'medium' ? styles.medium : styles.small) + 
+    ' ' + (disabled ? styles.disabled : '');
+
   return (
     isPhone ? (
-      <a 
-        href={onClick} 
-        className = {`${styles.item} ` + (size === 'large' ?
-          styles.large :
-          size === 'medium' ?
-            styles.medium :
-              size === 'mediumHeader' ?
-                styles.mediumHeader :
-                styles.small
-        ) + ' ' + (disabled ? styles.disabled : '')}
-        >
+      <a href={onClick} className = {buttonSelector}>
         {children}
       </a>
     ) : (
-      <button 
-        onClick={onClick}
-        type={htmlType}
-        disabled={disabled}
-        className = {`${styles.button} ` + (size === 'large' ?
-          styles.large :
-          size === 'medium' ?
-            styles.medium :
-            styles.small
-        ) + ' ' + (disabled ? styles.disabled : '')}
-      >
+      <button onClick={onClick} type={htmlType} disabled={disabled} className = {buttonSelector}>
         {children}
       </button>
     )

@@ -1,4 +1,4 @@
-@import '../../modules/variables.scss';
+@import '../../assets/variables.scss';
 
 .item {
   display: flex;
@@ -54,12 +54,8 @@
   display: inline-flex;
   gap: 7px;
   text-decoration: none;
-  font-family: $font-roboto;
-  font-size: pxToRem(20);
-  font-weight: 500;
+  @include textMixin($font-roboto, $grey-scale-primary-first, 95%, 20px, 500);
   font-variant: all-small-caps;
-  line-height: 95%;
-  color: $grey-scale-primary-first;
   transition: color 0.4s ease-in-out;
 
   &:hover { 

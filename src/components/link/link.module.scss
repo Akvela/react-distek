@@ -1,4 +1,4 @@
-@import '../../modules/variables.scss';
+@import '../../assets/variables.scss';
 
 .item {
   display: flex;
@@ -45,15 +45,11 @@
 }
 
 .title {
-  font-family: $font-roboto;
-  font-size: pxToRem(20);
-  font-weight: 500;
-  line-height: 95%;
+  @include textMixin($font-roboto, $brand-blue-primary-light, 95%, 20px, 500);
   font-variant: all-small-caps;
   margin: 0;
   display: inline-flex;
   gap: 7px;
-  color: $brand-blue-primary-light;
 
   @media screen and (max-width: 1199px) {
     font-size: pxToRem(16);
