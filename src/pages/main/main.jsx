@@ -14,6 +14,7 @@ function Main() {
   const [isHoverTab, setIsHoverTab] = useState(false);
   const [openIdAccordion, setOpenIdAccordion] = useState('');
   const accordionBodyRefs = useRef([]);
+  const tabsLinksRefs = useRef([]);
   
   const linksPartner = [
     { title: 'Sketchup', logo: 'partnerLogoSketchup' },
@@ -31,7 +32,7 @@ function Main() {
       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id 
       est laborum.` },
-    { number: '03', title: 'Более 30 партнеров', text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+    { number: '03', title: 'Более 30 партнеров', text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
       tempor incididunt ut labore et dolore magna aliqua.` },
     { number: '04', title: 'Информационная поддержка', text: `Pellentesque sit amet porttitor eget. Diam sit amet nisl suscipit 
       adipiscing bibendum est ultricies. Quam id leo in vitae turpis massa sed elementum. Risus nec feugiat in fermentum posuere urna 
@@ -47,39 +48,39 @@ function Main() {
 
   const tabsSoft = [
     { number: 'one',
-      title: 'Эскизное 3d-моделирование',
+      title: 'Эскизное 3d‑моделирование',
       image: backgroundTabSoft1,
       listLinks: [{ title: 'Sketchup', logo: 'partnerLogoSketchup' }],
       listAdvantages: [
-        'Быстрое, простое и качественное создание 3D-моделей любых объектов по чертежу, изображению, фотографии и т.д.',
-        'Оформление проектной документации по требованиям ЕСКД и СПДС, создание отчётов и спецификаций',
+        'Быстрое, простое и качественное создание 3D-моделей любых объектов по чертежу, изображению, фотографии и т.д.',
+        'Оформление проектной документации по требованиям ЕСКД и СПДС, создание отчётов и спецификаций',
         'Крупнейшая библиотека бесплатных 3D-моделей',
-        'Просмотр модели в виртуальной реальности',
-        'Обмер помещений непосредственно в SketchUp'
+        'Просмотр модели в виртуальной реальности',
+        'Обмер помещений непосредственно в SketchUp'
       ]
     },
     { number: 'two',
-      title: 'Моделирование и деталировка',
+      title: 'Моделирование и деталировка',
       image: backgroundTabSoft2,
       listLinks: [{ title: 'Tekla structures', logo: 'partnerLogoTekla' }, { title: 'Tekla model sharing', logo: 'partnerLogoTekla' }],
       listAdvantages: [
-        'Создание информационной модели с высоким уровнем детализации (LOD 500)',
-        'Совместная работа над проектом с неограниченным количеством участников',
-        'Создание отчетов и экспорт ЧПУ файлов',
-        'Экономическая оценка конструкций на этапе планирования',
-        'Проверка на коллизии в один клик'
+        'Создание информационной модели с высоким уровнем детализации (LOD 500)',
+        'Совместная работа над проектом с неограниченным количеством участников',
+        'Создание отчетов и экспорт ЧПУ файлов',
+        'Экономическая оценка конструкций на этапе планирования',
+        'Проверка на коллизии в один клик'
       ]
     },
     { number: 'three',
-      title: 'Доступ к проектной информации',
+      title: 'Доступ к проектной информации',
       image: backgroundTabSoft3,
       listLinks: [{ title: 'Trimble connect', logo: 'partnerLogoTrimble' }],
       listAdvantages: [
-        'Совместная работа над проектом из любой точки мира',
+        'Совместная работа над проектом из любой точки мира',
         'Неограниченное облачное хранилище документов и моделей',
-        'Контроль изменений в проекте',
-        'Назначение статуса и определение сроков выполнения задач',
-        'Просмотр сведения о проекте в мобильном приложении Trimble Connect или VR-гарнитуре'
+        'Контроль изменений в проекте',
+        'Назначение статуса и определение сроков выполнения задач',
+        'Просмотр сведения о проекте в мобильном приложении Trimble Connect или VR-гарнитуре'
       ]
     },
   ];
@@ -94,13 +95,24 @@ function Main() {
   }
   
   accordionBodyRefs.current = accordionItems.map((_, i) => accordionBodyRefs.current[i] ?? createRef());
+  tabsLinksRefs.current = tabsSoft.map((_, i) => tabsLinksRefs.current[i] ?? createRef());
 
   useEffect(() => {
     function updateWindowWidth() {
-      setWindowWidth(window.innerWidth)
+      setWindowWidth(window.innerWidth);
     }
 
     window.addEventListener('resize', updateWindowWidth);
+
+   if (tabsLinksRefs.current !== null) {
+    for (let i = 1; i < tabsLinksRefs.current.length; i++) {
+      if (tabsLinksRefs.current[i].current.offsetHeight < tabsLinksRefs.current[i - 1].current.offsetHeight) {
+        tabsLinksRefs.current[i].current.style.height = tabsLinksRefs.current[i - 1].current.offsetHeight + 'px';
+      } else if (tabsLinksRefs.current[i].current.offsetHeight > tabsLinksRefs.current[i - 1].current.offsetHeight) {
+        tabsLinksRefs.current[i - 1].current.style.height = tabsLinksRefs.current[i].current.offsetHeight + 'px';
+      }
+    }
+  }
 
     return () => window.removeEventListener('resize', updateWindowWidth);
   }, [windowWidth])
@@ -146,7 +158,7 @@ function Main() {
             <p className={styles.paragraphAdvantages}>Подберите программные продукты для моделирования конструкции и визуализации проектов</p>
             <a className={styles.linkAdvantages} href='#'>
               <SvgSelector svg={windowWidth <= 1505 ? 'arrowDownBlue' : 'roundDownArrow'} />
-              <img className={styles.linkAdvantagesIcon} src={arrowDownWhite} alt='иконка стрелка вниз' />подробнее о решениях для ваших задач
+              <img className={styles.linkAdvantagesIcon} src={arrowDownWhite} alt='иконка стрелка вниз' />подробнее о решениях для ваших задач
             </a>
           </Tab>
         </div>
@@ -159,7 +171,7 @@ function Main() {
 
           {tabsSoft.map((tab, index)=>(
             <Tab number={tab.number} title={tab.title} imageBackgroundSoft={tab.image} key={index}>
-              <ul className={styles.listSoftLinks}>
+              <ul className={styles.listSoftLinks} ref={tabsLinksRefs.current[index]}>
                 {tab.listLinks.map((link, index)=>(
                   <li key={index}>
                     <Link title={link.title} icon={link.logo} />

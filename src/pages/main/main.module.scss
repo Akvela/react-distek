@@ -81,7 +81,6 @@
 }
 
 .listLinks {
-  list-style: none;
   display: flex;
   gap: 57px;
   padding-left: 0;
@@ -309,7 +308,6 @@
 
 .listAdvantages {
   position: relative;
-  list-style: none;
   z-index: 2;
   width: 560px;
   display: flex;
@@ -480,7 +478,6 @@
   }
 }
 
-
 .softTabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -498,63 +495,35 @@
     }
   }
 
-  article {
-    &:first-child img {
-      width: 231px;
-      height: 205px;
-      margin: 97px 0 35px calc(50% - 145px);
-      
-      @media screen and (max-width: 1380px) {
-        width: 30%;
-        height: auto;
-        margin: 57px auto 20px;
+  @media screen and (max-width: 991px) {
+    article {
+      &:nth-child(2) img {
+        margin-top: 74px;
+        margin-bottom: 11px;
+
+        @media screen and (max-width: 413px) {
+          margin-top: 37px;
+          margin-bottom: 0px;
+        }
       }
 
-      @media screen and (max-width: 991px) {
-        width: 278px;
-        height: 247px;
-        margin: 60px 0 0 calc(50% - 179px);
-      }
+      &:nth-child(3) img {
+        margin-bottom: 20px;
 
-      @media screen and (max-width: 413px) {
-        width: 242px;
-        height: 215px;
-        margin: 22px 0 47px calc(50% - 146px);
-      }
-    }
-
-    &:last-child img {
-      width: 220px;
-      height: 200px;
-      margin: 89px 0 47px calc(50% - 145px);
-
-      @media screen and (max-width: 1380px) {
-        width: 30%;
-        height: auto;
-        margin: 57px auto 20px;
-      }
-
-      @media screen and (max-width: 991px) {
-        width: 270px;
-        height: 257px;
-        margin: 55px 0 -1px calc(50% - 172px);
-      }
-
-      @media screen and (max-width: 413px) {
-        margin: 0 0 -7px calc(50% - 152px);
+        @media screen and (max-width: 413px) {
+          margin-bottom: 4px;
+        }
       }
     }
   }
 }
 
 .listSoftLinks {
-  min-height: 66px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 10px;
   margin: 0;
-  list-style: none;
+  gap: 10px;
   
   @media screen and (max-width: 1380px) {
     position: absolute;
@@ -581,10 +550,9 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  list-style: none;
   padding-left: 0;
   margin: 20px 0 16px;
-  max-width: 520px;
+  max-width: 100%;
   
   @media screen and (max-width: 1380px) {
     max-height: 213px;
@@ -607,7 +575,7 @@
   }
   
   @media screen and (max-width: 413px) {
-    gap: 23px;
+    gap: 21px;
     margin-bottom: 8px;
   }
 }
@@ -615,6 +583,7 @@
 @media screen and (max-width: 413px) {
   .softTabs article:first-child .listSoftAdvantages {
     margin-bottom: 3px;
+    gap: 20px;
   }
 }
 
@@ -625,7 +594,7 @@
   
   @media screen and (max-width: 743px) {
     font-size: pxToRem(15);
-    line-height: 100%;
+    line-height: 106%;
   }
 
   &::before {
