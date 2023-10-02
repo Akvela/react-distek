@@ -104,14 +104,20 @@ function Main() {
 
     window.addEventListener('resize', updateWindowWidth);
 
-   if (tabsLinksRefs.current !== null) {
+  if (tabsLinksRefs.current !== null) {
     for (let i = 1; i < tabsLinksRefs.current.length; i++) {
-      if (tabsLinksRefs.current[i].current.offsetHeight < tabsLinksRefs.current[i - 1].current.offsetHeight) {
-        tabsLinksRefs.current[i].current.style.height = tabsLinksRefs.current[i - 1].current.offsetHeight + 'px';
-      } else if (tabsLinksRefs.current[i].current.offsetHeight > tabsLinksRefs.current[i - 1].current.offsetHeight) {
-        tabsLinksRefs.current[i - 1].current.style.height = tabsLinksRefs.current[i].current.offsetHeight + 'px';
+      if (windowWidth > 1505) {
+        if (tabsLinksRefs.current[i].current.offsetHeight < tabsLinksRefs.current[i - 1].current.offsetHeight) {
+          tabsLinksRefs.current[i].current.style.height = tabsLinksRefs.current[i - 1].current.offsetHeight + 'px';
+        } else if (tabsLinksRefs.current[i].current.offsetHeight > tabsLinksRefs.current[i - 1].current.offsetHeight) {
+          tabsLinksRefs.current[i - 1].current.style.height = tabsLinksRefs.current[i].current.offsetHeight + 'px';
+        }
+      } else {
+        if (tabsLinksRefs.current[i].current.style.height !== '') {
+          tabsLinksRefs.current[i].current.style.height = '';
+        }
       }
-    }
+    } 
   }
 
     return () => window.removeEventListener('resize', updateWindowWidth);
@@ -133,7 +139,7 @@ function Main() {
         </ul>
       </section>
       <section className={styles.tabs}>
-        <div className={(isHoverTab && windowWidth >= 1505) ? `${styles.tabsContainer} ${styles.tabsContainerActive}` : styles.tabsContainer}>
+        <div className={(isHoverTab && windowWidth > 1505) ? `${styles.tabsContainer} ${styles.tabsContainerActive}` : styles.tabsContainer}>
           <Tab number='one' title='партнерам и вендорам'>
             <a className={styles.tabEmail} href='#'><SvgSelector svg='email' />info@distek.ru</a>
             <div className={styles.tabBackground}></div>
