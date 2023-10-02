@@ -101,21 +101,21 @@ function Main() {
     function updateWindowWidth() {
       setWindowWidth(window.innerWidth);
     }
-
     window.addEventListener('resize', updateWindowWidth);
 
   if (tabsLinksRefs.current !== null) {
     for (let i = 1; i < tabsLinksRefs.current.length; i++) {
-      if (windowWidth > 1505) {
+      if (windowWidth > 1380) {
         if (tabsLinksRefs.current[i].current.offsetHeight < tabsLinksRefs.current[i - 1].current.offsetHeight) {
           tabsLinksRefs.current[i].current.style.height = tabsLinksRefs.current[i - 1].current.offsetHeight + 'px';
         } else if (tabsLinksRefs.current[i].current.offsetHeight > tabsLinksRefs.current[i - 1].current.offsetHeight) {
           tabsLinksRefs.current[i - 1].current.style.height = tabsLinksRefs.current[i].current.offsetHeight + 'px';
         }
       } else {
-        if (tabsLinksRefs.current[i].current.style.height !== '') {
-          tabsLinksRefs.current[i].current.style.height = '';
+        if (i === 1) {
+          tabsLinksRefs.current[i - 1].current.style.height = 'auto';
         }
+        tabsLinksRefs.current[i].current.style.height = 'auto';
       }
     } 
   }
