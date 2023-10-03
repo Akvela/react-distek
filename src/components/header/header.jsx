@@ -4,7 +4,7 @@ import { Button } from '../button/button';
 import { SvgSelector } from '../svg-selector/svg-selector';
 import logo from '../../assets/images/logo.png';
 
-function Header() {
+function Header({ softRef, newsRef, aboutRef, scrollEffect }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -21,18 +21,18 @@ function Header() {
     <header className={styles.item}>
       <div className={styles.container}>
         <a href='/'>
-          <img className={styles.logo} src={logo} alt='Логотип' />
+          <img className={styles.logo} src={logo} alt='логотип' />
         </a>
 
         <ul className={styles.menu}>
           <li>
-            <a href='#' className={styles.link}>программное обеспечение <SvgSelector svg='arrowDown' /></a>
+            <button onClick={() =>scrollEffect(softRef)} className={styles.link}>программное обеспечение <SvgSelector svg='arrowDown' /></button>
           </li>
           <li>
-            <a href='#' className={styles.link}>Новости <SvgSelector svg='arrowDown' /></a>
+            <button onClick={() =>scrollEffect(newsRef)} className={styles.link}>Новости <SvgSelector svg='arrowDown' /></button>
           </li>
           <li>
-            <a href='#' className={styles.link}>О нас <SvgSelector svg='arrowDown' /></a>
+            <button onClick={() =>scrollEffect(aboutRef)} className={styles.link}>О нас <SvgSelector svg='arrowDown' /></button>
           </li>
         </ul>
       </div>

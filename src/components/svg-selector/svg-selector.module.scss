@@ -10,3 +10,14 @@
     fill: url(#paint0_linear_310_781);
   }
 }
+
+.roundRightArrow g path:hover {
+  fill: url(#paint0_linear_310_781);
+}
+
+.roundRightArrow.disabled g path {
+  fill: #BDBEC1;
+  &:hover {
+    fill: #BDBEC1;
+  }
+} 

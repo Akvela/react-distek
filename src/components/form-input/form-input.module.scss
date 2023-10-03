@@ -1,0 +1,130 @@
+@import '../../assets/variables.scss';
+
+.title {
+  @include textMixin($font-monserrat, $grey-scale-secondary, 106%, 20px, 600);
+  text-transform: lowercase;
+  margin: 32px 0 14px 40px;
+
+  @media screen and (max-width: 1199px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 743px) {
+    font-size: pxToRem(16);
+    margin: 0 0 8px 0;
+  }
+}
+
+.container {
+  position: relative;
+}
+
+.item {
+  margin: 0 40px 12px;
+  padding: 16px 180px 16px 20px;
+  width: calc(100% - 80px);
+  border-radius: 10px;
+  border: 1px solid $grey-scale-quaternary;
+
+  @media screen and (max-width: 1199px) {
+    width: calc(100% - 40px);
+    margin: 0 20px 10px;
+  }
+
+  @media screen and (max-width: 743px) {
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 11px 50px 11px 10px;
+  }
+  
+  &::placeholder {
+    @include textMixin($font-roboto, $grey-scale-quaternary, 106%, 17px, 500);
+    font-variant: all-small-caps;
+  }
+    
+  &::-webkit-input-placeholder {
+    @include textMixin($font-roboto, $grey-scale-quaternary, 106%, 17px, 500);
+    font-variant: all-small-caps;
+  }
+    
+  &:-ms-input-placeholder {
+    @include textMixin($font-roboto, $grey-scale-quaternary, 106%, 17px, 500);
+    font-variant: all-small-caps;
+  }
+    
+  &::-moz-placeholder {
+    @include textMixin($font-roboto, $grey-scale-quaternary, 106%, 17px, 500);
+    font-variant: all-small-caps;
+  }
+}
+
+.button {
+  position: absolute;
+  right: 46px;
+  top: 11px;
+  display: flex;
+  gap: 12px;
+  @include textMixin($font-roboto, $grey-scale-secondary, 106%, 15px, 500);
+  font-variant: all-small-caps;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media screen and (max-width: 1199px) {
+    right: 24px;
+  }
+
+  @media screen and (max-width: 743px) {
+    top: 3px;
+    right: 5px;
+    width: 32px;
+    height: 36px;
+
+    span {
+      display: none;
+    }
+  }
+  
+  &:hover {
+    background: $gradient-blue-button-hover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    g path {
+      fill: url(#paint0_linear_310_781);
+    }
+  }
+}
+
+.agreement {
+  @include textMixin($font-roboto, $grey-scale-secondary, 100%, 12px, 400);
+  text-transform: lowercase;
+  margin: 0 40px 39px;
+
+  @media screen and (max-width: 1199px) {
+    margin: 0 20px 41px;
+  }
+
+  @media screen and (max-width: 743px) {
+    line-height: 114%;
+    margin: 0;
+  }
+}
+
+.agreementUrl {
+  color: $brand-blue-primary-light;
+  text-decoration: none;
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

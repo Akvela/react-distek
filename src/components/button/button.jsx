@@ -6,19 +6,20 @@ export const Button = ({
   children,
   disabled = false,
   htmlType = 'button',
-  isPhone = false
+  isPhone = false,
+  addClass
 }) => {
 
   const buttonSelector = `${styles.item} ` + (size === 'large' ? styles.large : size === 'medium' ? styles.medium : styles.small) + 
-    ' ' + (disabled ? styles.disabled : '');
+    ' ' + addClass + ' ' + (disabled ? styles.disabled : '');
 
   return (
     isPhone ? (
-      <a href={onClick} className = {buttonSelector}>
+      <a href={onClick} className={buttonSelector}>
         {children}
       </a>
     ) : (
-      <button onClick={onClick} type={htmlType} disabled={disabled} className = {buttonSelector}>
+      <button onClick={onClick} type={htmlType} disabled={disabled} className={buttonSelector}>
         {children}
       </button>
     )
