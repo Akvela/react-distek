@@ -48,7 +48,7 @@
 }
 
 .title {
-  @include textMixin($font-roboto, $brand-blue-primary-light, 95%, 20px, 500);
+  @include textMixin($font-roboto, $brand-blue-primary-light, 83%, 20px, 500);
   font-variant: all-small-caps;
   margin: 0;
   display: inline-flex;
