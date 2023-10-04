@@ -1,5 +1,6 @@
 import styles from './card.module.scss';
 import { SvgSelector } from '../svg-selector/svg-selector';
+import arrowblue from '../../assets/images/around-arrow-right-blue.svg';
 
 export const Card = ({ date, title, background, link, refTitle }) => {
   const cardStyle = {
@@ -15,7 +16,7 @@ export const Card = ({ date, title, background, link, refTitle }) => {
         <h2 className={styles.title} ref={refTitle}>{title}</h2>
         <div className={styles.link}>
           <p className={styles.linkText}>подробнее на <span className={styles.linkUrl}>{link}</span></p>
-          <SvgSelector svg='roundRightArrow' />
+          <SvgSelector svg='roundRightArrow' /><img className={styles.iconActive} src={arrowblue} alt='стрелка вправо' />
         </div>
       </article>
     </a>

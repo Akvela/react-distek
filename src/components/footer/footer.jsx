@@ -9,6 +9,8 @@ import fc from '../../assets/images/fc.svg';
 import vk from '../../assets/images/vk.svg';
 import yt from '../../assets/images/yt.svg';
 import studio from '../../assets/images/logo-studio.svg';
+import arrowUpBlue from '../../assets/images/arrow-up-blue.svg';
+import arrowRightBlue from '../../assets/images/arrow-right-blue.svg';
 
 
 function Footer({ softRef, newsRef, aboutRef, scrollEffect }) {
@@ -35,19 +37,27 @@ function Footer({ softRef, newsRef, aboutRef, scrollEffect }) {
         </div>
         <div className={styles.main}>
           <div>
-            <button onClick={() =>scrollEffect(softRef)} className={styles.link + ' ' + styles.linkTitle}>программное обеспечение <SvgSelector svg='arrowUp' /></button>
+            <button onClick={() =>scrollEffect(softRef)} className={styles.link + ' ' + styles.linkTitle}>программное обеспечение <SvgSelector svg='arrowUp' /><img className={styles.arrow} src={arrowUpBlue} alt='иконка стрелка вверх' /></button>
             <ul className={styles.listLinks}>
-              <li className={styles.link}>Sketchup <SvgSelector svg='arrowRight' /></li>
-              <li className={styles.link}>tekla structures <SvgSelector svg='arrowRight' /></li>
-              <li className={styles.link}>Tekla model sharing <SvgSelector svg='arrowRight' /></li>
-              <li className={styles.link}>Trimble connect <SvgSelector svg='arrowRight' /></li>
+              <li>
+                <a className={styles.link} href='#'>Sketchup <SvgSelector svg='arrowRight' /><img className={styles.arrow} src={arrowRightBlue} alt='иконка стрелка вправо' /></a>
+              </li>
+              <li>
+                <a className={styles.link} href='#'>tekla structures <SvgSelector svg='arrowRight' /><img className={styles.arrow} src={arrowRightBlue} alt='иконка стрелка вправо' /></a>
+              </li>
+              <li>
+                <a className={styles.link} href='#'>Tekla model sharing <SvgSelector svg='arrowRight' /><img className={styles.arrow} src={arrowRightBlue} alt='иконка стрелка вправо' /></a>
+              </li>
+              <li>
+                <a className={styles.link} href='#'>Trimble connect <SvgSelector svg='arrowRight' /><img className={styles.arrow} src={arrowRightBlue} alt='иконка стрелка вправо' /></a>
+              </li>
             </ul>
           </div>
           <div>
-            <button onClick={() =>scrollEffect(aboutRef)} className={styles.link + ' ' + styles.linkTitle}>О нас <SvgSelector svg='arrowUp' /></button>
+            <button onClick={() =>scrollEffect(aboutRef)} className={styles.link + ' ' + styles.linkTitle}>О нас <SvgSelector svg='arrowUp' /><img className={styles.arrow} src={arrowUpBlue} alt='иконка стрелка вверх' /></button>
             <ul className={styles.listLinks}>
               <li>
-                <button onClick={() =>scrollEffect(newsRef)} className={styles.link}>Новости <SvgSelector svg='arrowUp' /></button>
+                <button onClick={() =>scrollEffect(newsRef)} className={styles.link}>Новости <SvgSelector svg='arrowUp' /><img className={styles.arrow} src={arrowUpBlue} alt='иконка стрелка вверх' /></button>
               </li>
             </ul>
           </div>
@@ -60,16 +70,16 @@ function Footer({ softRef, newsRef, aboutRef, scrollEffect }) {
         <Button isPhone onClick='tel:+74956609370' size={windowWidth <= 743 ? 'medium' : 'large'} addClass={styles.button}>+7&#160;495&#160;660&#160;93&#160;70</Button>
         <ul className={styles.icons}>
           <li className={styles.wrapper}>
-            <a href='#' className={styles.socialUrl}><img src={fc} alt='иконка' /></a>
+            <a href='#' className={styles.socialUrl}><img src={fc} alt='иконка соцсети' /></a>
           </li>
           <li className={styles.wrapper}>
-            <a href='#' className={styles.socialUrl}><img src={vk} alt='иконка' /></a>
+            <a href='#' className={styles.socialUrl}><img src={vk} alt='иконка соцсети' /></a>
           </li>
           <li className={styles.wrapper}>
             <a href='#' className={styles.socialUrl}><img src={yt} alt='иконка соцсети' /></a>
           </li>
           <li className={styles.wrapper}>
-            <a href='#' className={styles.socialUrl}><img src={inst} alt='иконка' /></a>
+            <a href='#' className={styles.socialUrl}><img src={inst} alt='иконка соцсети' /></a>
           </li>
         </ul>
         <div className={windowWidth <= 743 ? styles.autors : styles.wrapper + ' ' + styles.autors}>

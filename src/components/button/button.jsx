@@ -16,11 +16,11 @@ export const Button = ({
   return (
     isPhone ? (
       <a href={onClick} className={buttonSelector}>
-        {children}
+        <span>{children}</span>
       </a>
     ) : (
       <button onClick={onClick} type={htmlType} disabled={disabled} className={buttonSelector}>
-        {children}
+        <span>{children}</span>
       </button>
     )
   );

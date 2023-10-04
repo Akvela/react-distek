@@ -17,10 +17,10 @@
   }
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.9;
 
-    svg g path {
-      fill: url(#paint0_linear_310_781);
+    .iconActive {
+      opacity: 0.9;
     }
   }
 }
@@ -111,10 +111,6 @@
   text-transform: lowercase;
   margin: 0 0 38px 0;
   z-index: 2;
-  -webkit-transition: color 0.5s ease-in-out;
-  -moz-transition: color 0.5s ease-in-out;
-  -o-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
 
   @media screen and (max-width: 1380px) {
     font-size: pxToRem(16);
@@ -136,6 +132,17 @@
   @media screen and (max-width: 1380px) {
     padding-left: 10px;
   }
+}
+
+.iconActive {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .linkText {

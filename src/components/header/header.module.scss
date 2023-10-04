@@ -10,9 +10,9 @@
 
   @media screen and (max-width: 413px) {
     a:last-child {
-      padding: 11px 50px 10px;
+      padding: 11px 52px 10px;
 
-      @media screen and (max-width: 374px) {
+      @media screen and (max-width: 391px) {
         padding: 11px 20px 10px;
       }
     }
@@ -55,6 +55,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
   @include textMixin($font-roboto, $grey-scale-primary-first, 95%, 20px, 500);
   font-variant: all-small-caps;
   -webkit-transition: color 0.4s ease-in-out;
@@ -65,14 +66,8 @@
   &:hover { 
     color: $brand-blue-primary-light;
 
-    svg {
-      path:first-child {
-        fill: $brand-blue-primary-light;
-      }
-
-      path:last-child {
-        stroke: $brand-blue-primary-light;
-      }
+    .arrow {
+      opacity: 1;
     }
   }
 }
@@ -82,4 +77,19 @@
     width: 93px;
     height: 26px;
   }
+}
+
+.arrow {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 1px;
+  right: 6px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }

@@ -3,10 +3,11 @@
 .title {
   @include textMixin($font-monserrat, $grey-scale-secondary, 106%, 20px, 600);
   text-transform: lowercase;
-  margin: 32px 0 14px 40px;
+  margin: 35px 0 14px 40px;
 
   @media screen and (max-width: 1199px) {
     margin-left: 20px;
+    margin-bottom: 9px;
   }
 
   @media screen and (max-width: 743px) {
@@ -86,16 +87,57 @@
       display: none;
     }
   }
-  
-  &:hover {
-    background: $gradient-blue-button-hover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+}
 
-    g path {
-      fill: url(#paint0_linear_310_781);
+.buttonActive {
+  position: absolute;
+  right: 46px;
+  top: 11px;
+  display: flex;
+  gap: 12px;
+  @include textMixin($font-roboto, $grey-scale-secondary, 106%, 15px, 500);
+  background: $gradient-blue-button-hover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-variant: all-small-caps;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 1199px) {
+    right: 24px;
+  }
+
+  @media screen and (max-width: 743px) {
+    top: 3px;
+    right: 5px;
+    width: 32px;
+    height: 36px;
+
+    span {
+      display: none;
     }
+  }
+}
+
+.iconActive {
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media screen and (max-width: 743px) {
+    width: 20px;
+    height: 20px;
   }
 }
 

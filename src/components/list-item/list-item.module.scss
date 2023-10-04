@@ -30,6 +30,7 @@
 
 .title {
   @include textMixin($font-roboto, $grey-scale-primary-first, 110%, 18px, 500);
+  -webkit-font-feature-settings: "kern" 1;
   font-variant: all-small-caps;
   margin: 0;
 

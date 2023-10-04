@@ -1,31 +1,39 @@
 @font-face { 
   font-family: 'Roboto';
-  src: url('./fonts/RobotoRegular.woff2') format('woff2'),
-    url('./fonts/RobotoRegular.woff') format('woff');
+  src: url('./fonts/robotoregular.woff2') format('woff2'),
+    url('./fonts/robotoregular.woff') format('woff'),
+    url('./fonts/robotoregular.ttf') format('truetype'),
+    url('./fonts/robotoregular.svg#robotoregular') format('svg');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face { 
   font-family: 'Roboto';
-  src: url('./fonts/RobotoMedium.woff2') format('woff2'),
-    url('./fonts/RobotoMedium.woff') format('woff');
+  src: url('./fonts/robotomedium.woff2') format('woff2'),
+    url('./fonts/robotomedium.woff') format('woff'), 
+    url('./fonts/robotomedium.ttf') format('truetype'),
+    url('./fonts/robotomedium.svg#robotomedium') format('svg');
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face { 
   font-family: 'Monserrat';
-  src: url('./fonts/MontserratSemiBold.woff2') format('woff2'),
-    url('./fonts/MontserratSemiBold.woff') format('woff');
+  src: url('./fonts/montserratsemibold.woff2') format('woff2'),
+    url('./fonts/montserratsemibold.woff') format('woff'), 
+    url('./fonts/montserratsemibold.ttf') format('truetype'), 
+    url('./fonts/montserratsemibold.svg#montserratsemibold') format('svg');
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face { 
   font-family: 'Monserrat';
-  src: url('./fonts/MontserratBold.woff2') format('woff2'),
-    url('./fonts/MontserratBold.woff') format('woff');
+  src: url('./fonts/montserratbold.woff2') format('woff2'),
+    url('./fonts/montserratbold.woff') format('woff'), 
+    url('./fonts/montserratbold.ttf') format('truetype'), 
+    url('./fonts/montserratbold.svg#montserratbold') format('svg');
   font-style: normal;
   font-weight: 700;
 }
