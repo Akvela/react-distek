@@ -13,19 +13,7 @@ import arrowUpBlue from '../../assets/images/arrow-up-blue.svg';
 import arrowRightBlue from '../../assets/images/arrow-right-blue.svg';
 
 
-function Footer({ softRef, newsRef, aboutRef, scrollEffect }) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    function updateWindowWidth() {
-      setWindowWidth(window.innerWidth)
-    }
-
-    window.addEventListener('resize', updateWindowWidth);
-
-    return () => window.removeEventListener('resize', updateWindowWidth);
-  }, [windowWidth])
-
+function Footer({ softRef, newsRef, aboutRef, scrollEffect, windowWidth }) {
   return (
     <footer>
       <div className={styles.item}>

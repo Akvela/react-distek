@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, createRef } from 'react';
+import React, { useState, useRef, createRef } from 'react';
 import styles from './main.module.scss';
 import { Link } from '../../components/link/link';
 import { Tab } from '../../components/tab/tab';
@@ -16,13 +16,10 @@ import backgroundCard2 from '../../assets/images/card2.jpeg';
 import backgroundCard3 from '../../assets/images/card3.jpeg';
 import backgroundCard4 from '../../assets/images/card4.jpeg';
 
-function Main({ softRef, newsRef, aboutRef }) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+function Main({ softRef, newsRef, aboutRef, tabsLinksRefs, cardTitleRefs, windowWidth }) {
   const [isHoverTab, setIsHoverTab] = useState(false);
   const [openIdAccordion, setOpenIdAccordion] = useState('');
   const accordionBodyRefs = useRef([]);
-  const tabsLinksRefs = useRef([]);
-  const cardTitleRefs = useRef([]);
   
   const linksPartner = [
     { title: 'Sketchup', logo: 'partnerLogoSketchup' },
@@ -131,42 +128,6 @@ function Main({ softRef, newsRef, aboutRef }) {
   accordionBodyRefs.current = accordionItems.map((_, i) => accordionBodyRefs.current[i] ?? createRef());
   tabsLinksRefs.current = tabsSoft.map((_, i) => tabsLinksRefs.current[i] ?? createRef());
   cardTitleRefs.current = news.map((_, i) => cardTitleRefs.current[i] ?? createRef());
-
-  useEffect(() => {
-    function updateWindowWidth() {
-      setWindowWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', updateWindowWidth);
-
-  if (tabsLinksRefs.current !== null) {
-    for (let i = 1; i < tabsLinksRefs.current.length; i++) {
-      if (windowWidth > 1380) {
-        if (tabsLinksRefs.current[i].current.offsetHeight < tabsLinksRefs.current[i - 1].current.offsetHeight) {
-          tabsLinksRefs.current[i].current.style.height = tabsLinksRefs.current[i - 1].current.offsetHeight + 'px';
-        } else if (tabsLinksRefs.current[i].current.offsetHeight > tabsLinksRefs.current[i - 1].current.offsetHeight) {
-          tabsLinksRefs.current[i - 1].current.style.height = tabsLinksRefs.current[i].current.offsetHeight + 'px';
-        }
-      } else {
-        if (i === 1) {
-          tabsLinksRefs.current[i - 1].current.style.height = 'auto';
-        }
-        tabsLinksRefs.current[i].current.style.height = 'auto';
-      }
-    } 
-  }
-
-  if (cardTitleRefs.current !== null) {
-    for (let i = 1; i < cardTitleRefs.current.length; i++) {
-      if (cardTitleRefs.current[i].current.offsetHeight < cardTitleRefs.current[i - 1].current.offsetHeight) {
-        cardTitleRefs.current[i].current.style.height = cardTitleRefs.current[i - 1].current.offsetHeight + 'px';
-      } else if (cardTitleRefs.current[i].current.offsetHeight > cardTitleRefs.current[i - 1].current.offsetHeight) {
-        cardTitleRefs.current[i - 1].current.style.height = cardTitleRefs.current[i].current.offsetHeight + 'px';
-      }
-    }
-  }
-
-    return () => window.removeEventListener('resize', updateWindowWidth);
-  }, [windowWidth])
 
   return (
     <main>

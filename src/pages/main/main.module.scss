@@ -146,6 +146,8 @@
     position: absolute;
     inset: 0;
     background: url(../../assets/images/active-tab.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;

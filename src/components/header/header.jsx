@@ -5,19 +5,7 @@ import { SvgSelector } from '../svg-selector/svg-selector';
 import logo from '../../assets/images/logo.png';
 import arrowDownBlue from '../../assets/images/arrow-down-blue.svg';
 
-function Header({ softRef, newsRef, aboutRef, scrollEffect }) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    function updateWindowWidth() {
-      setWindowWidth(window.innerWidth)
-    }
-
-    window.addEventListener('resize', updateWindowWidth);
-
-    return () => window.removeEventListener('resize', updateWindowWidth);
-  }, [windowWidth])
-
+function Header({ softRef, newsRef, aboutRef, scrollEffect, windowWidth }) {
   return (
     <header className={styles.item}>
       <div className={styles.container}>
