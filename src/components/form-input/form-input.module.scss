@@ -3,7 +3,7 @@
 .title {
   @include textMixin($font-monserrat, $grey-scale-secondary, 106%, 20px, 600);
   text-transform: lowercase;
-  margin: 35px 0 14px 40px;
+  margin: 35px 0 11px 40px;
 
   @media screen and (max-width: 1199px) {
     margin-left: 20px;
@@ -26,6 +26,7 @@
   width: calc(100% - 80px);
   border-radius: 10px;
   border: 1px solid $grey-scale-quaternary;
+  @include textMixin($font-roboto, $grey-scale-primary-first, 100%, 16px, 500);
 
   @media screen and (max-width: 1199px) {
     width: calc(100% - 40px);
@@ -147,7 +148,7 @@
   margin: 0 40px 39px;
 
   @media screen and (max-width: 1199px) {
-    margin: 0 20px 41px;
+    margin: 0 20px 45px;
   }
 
   @media screen and (max-width: 743px) {

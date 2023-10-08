@@ -70,7 +70,7 @@
 .main {
   display: flex;
   padding: 33px 0 128px;
-  gap: 140px;
+  gap: 152px;
   justify-content: center;
 
   @media screen and (max-width: 1663px) {
@@ -95,14 +95,14 @@
   gap: 6px;
   padding-left: 0;
   width: 100%;
-  margin: 30px 0 0;
+  margin: 34px 0 0;
 
   @media screen and (max-width: 1199px) {
     margin-top: 34px;
   }
 
   @media screen and (max-width: 743px) {
-    margin-top: 20px;
+    margin-top: 25px;
   }
 }
 
@@ -128,11 +128,6 @@
     .arrow {
       opacity: 1;
     }
-  }
-
-  @media screen and (max-width: 743px) {
-    font-size: pxToRem(20);
-    line-height: 95%;
   }
 
   @media screen and (max-width: 355px) {
@@ -174,7 +169,7 @@
   }
 
   @media screen and (max-width: 1199px) {
-    margin-bottom: -8px;
+    margin-bottom: -11px;
 
     p:first-child {
       margin-top: 108px;
@@ -218,14 +213,14 @@
 .wrapper {
   border-radius: 10px;
   background: $grey-scale-sixtary;
-  padding: 18px;
+  padding: 18px 18px 10px;
 
   @media screen and (max-width: 1243px) {
-    padding: 20px 29px 14px 29px;
+    padding: 15px 29px 13px 29px;
   }
 
   @media screen and (max-width: 743px) {
-    padding: 10px 10px 6px;
+    padding: 11px 10px 8px;
 
     img {
       width: 20px;
@@ -267,11 +262,12 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-top: 12px;
 
   @media screen and (max-width: 1199px) {
     flex-direction: row-reverse;
     padding-bottom: 21px;
-    padding-top: 21px;
+    padding-top: 25px;
   }
 
   @media screen and (max-width: 743px) {
@@ -289,7 +285,7 @@
   font-variant: all-small-caps;
   margin: 0;
   display: flex;
-  gap: 23px;
+  gap: 13px;
   padding: 0 23px;
 
   @media screen and (max-width: 1199px) {

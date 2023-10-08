@@ -83,7 +83,7 @@
 
 .listLinks {
   display: flex;
-  gap: 87px;
+  gap: 57px;
   padding-left: 0;
   margin: 0;
 
@@ -148,6 +148,7 @@
     background: url(../../assets/images/active-tab.png);
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 20px;
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
@@ -295,7 +296,7 @@
 .titleListAdvantages {
   @include textMixin($font-roboto, $grey-scale-tetriary, 100%, 16px, 500);
   font-variant: all-small-caps;
-  margin: auto 0 35px 0;
+  margin: auto 0 39px 0;
   z-index: 2;
 
   @media screen and (max-width: 1505px) {
@@ -431,10 +432,12 @@
 /* Стили при наведении мыши на второй таб */
 
 .tabsContainerActive {
-  left: -145px;
+  left: -158px;
 
   article {
     &:last-child {
+      max-width: 510px;
+
       &::before {
         opacity: 1;
         z-index: 1;
@@ -557,8 +560,8 @@
   
   @media screen and (max-width: 1380px) {
     position: absolute;
-    top: 21px;
-    right: 18px;
+    top: 24px;
+    right: 24px;
     z-index: 3;
     justify-content: flex-start;
     gap: 5px;
@@ -615,7 +618,7 @@
 @media screen and (max-width: 413px) {
   .softTabs article:first-child .listSoftAdvantages {
     margin-bottom: 9px;
-    gap: 20px;
+    gap: 16px;
   }
 }
 
